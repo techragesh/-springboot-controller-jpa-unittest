@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "mysqldb",
+      "type": "java.lang.String",
+      "description": "Description for mysqldb."
+    },
+    {
+      "name": "mysqldb",
+      "type": "java.lang.String",
+      "description": "Description for mysqldb."
+    }
+  ] }
