@@ -15,6 +15,6 @@ TicketBookingApp Application using SpringBoot which includes unit testing for al
 * Used in memory database (H2) for DAO unit testing.
 * Code coverage report by using jacoco are included.
 * 96% code coverage acheived.
-* [Learn Markdown](https://rageshjava/bitbucket.org/rageshjava)
+* [Learn Markdown](https://rageshjava@bitbucket.org/rageshjava)
 
 ### Happy Coding ###
