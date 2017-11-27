@@ -78,6 +78,31 @@ public class TicketBookingControllerTest {
         assertThat(jsonInput).isEqualTo(jsonOutput);
     }
 
+
+    @Test
+    public void testGetTicketByIdIndividual() throws Exception{
+        String URI= "/booking/getTicketById/{ticketId}";
+        Ticket ticket = new Ticket();
+        ticket.setTicketId(1026);
+        ticket.setPassengerName("Kumar");
+        ticket.setFromStation("Chennai");
+        ticket.setToStation("Pune");
+        ticket.setBookingDate(new Date());
+        ticket.setEmail("kumar@msn.com");
+        String jsonInput = this.converttoJson(ticket);
+
+        Mockito.when(ticketBookingService.findTicketById(Mockito.any())).thenReturn(ticket);
+        MvcResult mvcResult = this.mockMvc.perform(MockMvcRequestBuilders.get(URI, 102)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn();
+        MockHttpServletResponse mockHttpServletResponse = mvcResult.getResponse();
+        String jsonOutput = mockHttpServletResponse.getContentAsString();
+        System.out.println(jsonOutput);
+        assertThat(jsonInput).isEqualTo(jsonOutput);
+        assertThat(ticket.getEmail()).isEqualTo("kumar@msn.com");
+    }
+
+
     @Test
     public void testGetAllBookedTickets() throws Exception{
         String URI = "/booking/getAllTickets";
